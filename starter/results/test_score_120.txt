@@ -1,0 +1,171 @@
+Command -> python tests/test_agent.py all
+
+Result:
+
+───────────────────────────────────────────────────────
+  Task 2 - Multi-Agent Orchestration
+───────────────────────────────────────────────────────
+  ✓ PASS [+5pts] build_inventory_agent() returns an Agent object
+  ✓ PASS [+5pts] InventoryAgent has 3 tools (3 found)
+  ✓ PASS [+5pts] build_policy_agent() returns an Agent object
+  ✓ PASS [+5pts] PolicyAgent has 1 tool (1 found)
+  ✓ PASS [+5pts] build_orchestrator_agent() returns an Agent object
+  ✓ PASS [+5pts] OrchestratorAgent has 5 routing tools (5 found)
+  ✓ PASS [+5pts] OrchestratorAgent uses config.ORCHESTRATOR_MODEL_ID (Claude Haiku 4.5 - correct for routing)
+  ✓ PASS [+5pts] Worker agents use config.WORKER_MODEL_ID (Claude Sonnet 4.5 - correct for reasoning)
+  ✓ PASS [+0pts] build_policy_agent() runs the retrievers with ThreadPoolExecutor
+
+───────────────────────────────────────────────────────
+  Task 3 - AgentCore Deployment + Guardrails
+───────────────────────────────────────────────────────
+  ✓ PASS [+5pts] Guardrail 'udacity-agentcore-guardrail' exists in Bedrock
+  ✓ PASS [+5pts] Guardrail content, PII, topic and word policies match the specification
+  ✓ PASS [+3pts] Guardrail version 1 is published and READY
+  ✓ PASS [+7pts] AgentCore Runtime is READY (PUBLIC / HTTP) with guardrail + KB environment variables
+
+───────────────────────────────────────────────────────
+  Task 4 - Memory
+───────────────────────────────────────────────────────
+  ✓ PASS [+5pts] AgentCore Memory udacity_agentcore_memory-0U7V53BVdw is ACTIVE
+  ✓ PASS [+5pts] Memory uses the SESSION_SUMMARY (summaryMemoryStrategy) strategy
+  ✓ PASS [+5pts] Memory eventExpiryDuration is 7 days
+
+───────────────────────────────────────────────────────
+  Task 5 - Bedrock Knowledge Bases
+───────────────────────────────────────────────────────
+  ✓ PASS [+5pts] RETURNS_KB_ID is set in environment (ZVFUOCU0SM)
+  ✓ PASS [+0pts] Returns Knowledge Base is ACTIVE
+  ✓ PASS [+0pts] Returns KB uses amazon.titan-embed-text-v2:0
+  ✓ PASS [+0pts] Returns KB data source has a completed sync
+  ✓ PASS [+5pts] SHIPPING_KB_ID is set in environment (KCXG474I2O)
+  ✓ PASS [+0pts] Shipping Knowledge Base is ACTIVE
+  ✓ PASS [+0pts] Shipping KB uses amazon.titan-embed-text-v2:0
+  ✓ PASS [+0pts] Shipping KB data source has a completed sync
+  ✓ PASS [+5pts] WARRANTY_KB_ID is set in environment (WDSBM3KHMH)
+  ✓ PASS [+0pts] Warranty Knowledge Base is ACTIVE
+  ✓ PASS [+0pts] Warranty KB uses amazon.titan-embed-text-v2:0
+  ✓ PASS [+0pts] Warranty KB data source has a completed sync
+  ✓ PASS [+5pts] All three Knowledge Bases return passages for a policy question
+    [PARALLEL RETRIEVAL - START]  Spawning 3 sub-agents concurrently via ThreadPoolExecutor
+    ──────────────────────────────────────────────────────
+    +-- [SUB-AGENT 01]  ReturnsRetriever   KB-ID: ZVFUOCU0SM
+    +-- [SUB-AGENT 02]  ShippingRetriever  KB-ID: KCXG474I2O
+    +-- [SUB-AGENT 03]  WarrantyRetriever  KB-ID: WDSBM3KHMH
+    Retrieving in parallel... (sub-agent output suppressed - clean results printed sequentially after [END])
+
+Tool #1: retrieve_returns_policy
+
+Tool #1: retrieve_warranty_policy
+
+Tool #1: retrieve_shipping_policy
+
+Tool #2: retrieve_returns_policy
+
+Tool #2: retrieve_warranty_policy
+
+Tool #2: retrieve_shipping_policy
+Based on the retrievedBased policyBased on the retrieved on the warranty information, here policy policy information information: retrieved, here are the answers
+
+## are to Premium Customer the answers your questions:
+
+## Return Window to Return
+** your questions:
+
+## Window for Premium Customers60 Return
+**  Window for Premium CustomersPremiumdays** - Premium tier
+** tierPremium customers receive customers receive an customers have an extended 60-day return window extended 60-day return window ( an**compared extended 60-day return window.** ( to the
+
+(compared standard 30-day window forStandard to the regular customers standard 30-day window for customers). have regular
+
+## Warranty Duration
+**3 a 30-day return window for years on comparison electronics** - Premium customers).
+
+## Warranty Duration tier customers receive a 3-year warranty on electronics (compared to the standard 1-)
+
+## Warranty Length
+The for Premium Customers
+**Premium tier warranty length depends on your customers receive an automatic 3-year customer warranty on all Electronics.**
+
+Foryear warranty for regular customers).
+
+### Additional tier:
+- **Standard reference Premium Tier**: 1-year warranty on: Benefits:
+- Free electronics
+- **Premium Tier**:
+- Standard customers expedited shipping on all orders
+- 3-year warranty on electronics receive Priority customer support with a 1-year limited response warranty on within 4 hours
+- Early
+
+### Premium Tier Requirements most access to sales and new product launches
+To products
+- Standard
+- Dedicated account manager for orders over qualify customers receive $500
+
+To for Premium a 2-year warranty on electronics qualify tier benefits
+- Premium customers get for Premium, customers the tier, customers must either must:
+- Spend $500 enhanced spend+ in a calendar year, 3-year warranty on electronics as $500+ in a calendar year OR OR
+- Place 20+ orders place 20+ orders in a calendar in a calendar year
+
+Customers part of their tier benefits
+
+To year. are automatically upgraded when qualify they meet these th for Premiumresholds, tier status and tier, customers must either status is evaluated on a rolling 12:
+--month basis. Spend $500+ in a calendar year, OR
+- Place 20+ orders in a calendar year    ──────────────────────────────────────────────────────
+    [PARALLEL RETRIEVAL - END]  All 3 KBs responded  Elapsed: 8.0s
+
+    [SUB-AGENT 01]  ReturnsRetriever   KB: ZVFUOCU0SM
+      | Based on the retrieved policy information, here are the answers to your questions:
+      | ## Return Window for Premium Customers
+      | **Premium tier customers receive an extended 60-day return window** (compared to the standard 30-day window for regular customers).
+      | ## Warranty Duration
+      | The warranty length depends on your customer tier:
+      | - **Standard Tier**: 1-year warranty on electronics
+      | - **Premium Tier**: 3-year warranty on electronics
+      | ### Premium Tier Requirements
+      | To qualify for Premium tier benefits, customers must:
+      | - Spend $500+ in a calendar year, OR
+      | - Place 20+ orders in a calendar year
+      | Customers are automatically upgraded when they meet these thresholds, and tier status is evaluated on a rolling 12-month basis.
+
+    [SUB-AGENT 02]  ShippingRetriever  KB: KCXG474I2O
+      | Based on the retrieved policy information:
+      | ## Premium Customer Return Window
+      | **60 days** - Premium tier customers receive an extended 60-day return window (compared to the standard 30-day window for regular customers).
+      | ## Warranty Duration
+      | **3 years on electronics** - Premium tier customers receive a 3-year warranty on electronics (compared to the standard 1-year warranty for regular customers).
+      | ### Additional Premium Benefits:
+      | - Free expedited shipping on all orders
+      | - Priority customer support with response within 4 hours
+      | - Early access to sales and new product launches
+      | - Dedicated account manager for orders over $500
+      | To qualify for Premium tier, customers must either spend $500+ in a calendar year OR place 20+ orders in a calendar year.
+
+    [SUB-AGENT 03]  WarrantyRetriever  KB: WDSBM3KHMH
+      | Based on the warranty policy information retrieved, here are the answers to your questions:
+      | ## Return Window for Premium Customers
+      | **Premium customers have an extended 60-day return window.**
+      | (Standard customers have a 30-day return window for comparison)
+      | ## Warranty Length for Premium Customers
+      | **Premium tier customers receive an automatic 3-year warranty on all Electronics.**
+      | For reference:
+      | - Standard customers receive a 1-year limited warranty on most products
+      | - Standard customers receive a 2-year warranty on electronics
+      | - Premium customers get the enhanced 3-year warranty on electronics as part of their tier benefits
+      | To qualify for Premium tier status, customers must either:
+      | - Spend $500+ in a calendar year, OR
+      | - Place 20+ orders in a calendar year
+  ✓ PASS [+5pts] search_all_policies() returned combined results from the three retrievers (8.0s)
+
+───────────────────────────────────────────────────────
+  Task 6 - Observability
+───────────────────────────────────────────────────────
+  ✓ PASS [+10pts] CloudWatch logging enabled at INFO level → /aws/bedrock/agentcore/udacity-agentcore
+  ℹ INFO no agent log events yet - run `python src/agent_orchestrator.py test`
+  ✓ PASS [+10pts] X-Ray tracing enabled: 100% sampling, Transaction Search → CloudWatch Logs (ACTIVE)
+  ℹ INFO no NovaMart traces in X-Ray yet - run `python src/agent_orchestrator.py test` (or `invoke`) and wait ~60 s
+
+═══════════════════════════════════════════════════════
+  Score: 120/120 pts (100%)
+═══════════════════════════════════════════════════════
+
+  🎉 Perfect score! All tasks complete.
