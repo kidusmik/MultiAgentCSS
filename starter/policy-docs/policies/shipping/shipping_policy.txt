@@ -1,0 +1,32 @@
+
+NovaMart Shipping Policy
+=========================
+Last Updated: January 2025
+
+DOMESTIC SHIPPING OPTIONS
+Standard Shipping (5-7 business days): Free on orders over $50, $4.99 otherwise
+Expedited Shipping (2-3 business days): $9.99
+Overnight Shipping (next business day): $24.99
+Same-Day Delivery (select metros): $14.99
+
+INTERNATIONAL SHIPPING
+We ship to over 50 countries. International shipping rates and delivery times vary
+by destination. Import duties and taxes are the responsibility of the recipient.
+Estimated delivery: 7-21 business days depending on destination.
+
+ORDER PROCESSING
+Orders placed before 2:00 PM EST on business days are processed same day.
+Orders placed after 2:00 PM EST or on weekends are processed the next business day.
+Orders are not processed on federal holidays.
+
+TRACKING
+A tracking number is emailed within 24 hours of shipment.
+Track your order at novamart.example.com/track or via the carrier's website.
+
+DELIVERY ISSUES
+Lost packages: File a claim within 30 days of expected delivery date.
+Wrong address: Contact support immediately. Address changes after dispatch may incur fees.
+Missed delivery: The carrier will attempt delivery up to 3 times before holding at facility.
+
+PREMIUM MEMBER BENEFITS
+Premium tier customers receive free expedited shipping on all orders.

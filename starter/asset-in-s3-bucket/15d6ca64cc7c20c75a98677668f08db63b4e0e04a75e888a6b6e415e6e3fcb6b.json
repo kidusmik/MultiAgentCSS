@@ -1,0 +1,128 @@
+{
+ "Description": "AgentCore stack for udacity deployed to default (us-east-1)",
+ "Resources": {
+  "ApplicationAgentAgentcoreRuntimeA1A4FE7E": {
+   "Type": "AWS::BedrockAgentCore::Runtime",
+   "Properties": {
+    "AgentRuntimeArtifact": {
+     "CodeConfiguration": {
+      "Code": {
+       "S3": {
+        "Bucket": "cdk-hnb659fds-assets-044889796315-us-east-1",
+        "Prefix": "f3b37a926638857e731d54390749abefa11679f9d38a65f4ecbc5a5e104429ec.zip"
+       }
+      },
+      "EntryPoint": [
+       "agent_orchestrator.py"
+      ],
+      "Runtime": "PYTHON_3_12"
+     }
+    },
+    "AgentRuntimeName": "udacity_agentcore_runtime",
+    "Description": "NovaMart multi-agent customer support system (Strands Agents on AgentCore Runtime)",
+    "EnvironmentVariables": {
+     "AWS_REGION": "us-east-1",
+     "PROJECT_NAME": "udacity-agentcore",
+     "RETURNS_KB_ID": "ZVFUOCU0SM",
+     "SHIPPING_KB_ID": "KCXG474I2O",
+     "WARRANTY_KB_ID": "WDSBM3KHMH",
+     "AGENT_LOG_GROUP": "/aws/bedrock/agentcore/udacity-agentcore",
+     "GUARDRAIL_ID": "06sxxpyf6bhx",
+     "GUARDRAIL_VERSION": "1"
+    },
+    "NetworkConfiguration": {
+     "NetworkMode": "PUBLIC"
+    },
+    "ProtocolConfiguration": "HTTP",
+    "RoleArn": "arn:aws:iam::044889796315:role/udacity-agentcore-agentcore-role",
+    "Tags": {
+     "agentcore:created-by": "agentcore-cli",
+     "agentcore:project-name": "udacity"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "AgentCore-udacity-default/Application/AgentAgentcoreRuntime/Runtime/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/y3MTQ6CMBBA4bPA0pSRH2PcCgcwgaUxpJSBlGJrOlNZEO5uRFdv9b0c8nMGaSQXSlRvkll3sDYslRFyoXalopVEyATXbwQVUAZlkEtJeI8P8UN02HunjBzRsnIeoRpsHSzrJ25iVw3LUdtR1EgueLU7sdtqsLfAr8CbsK5HmOj4zk+QXSCNJtI68b8R/IcfF+bn5q8AAAA="
+   },
+   "Metadata": {
+    "aws:cdk:path": "AgentCore-udacity-default/CDKMetadata/Default"
+   }
+  }
+ },
+ "Outputs": {
+  "ApplicationAgentAgentcoreRuntimeRuntimeIdOutput11AAB7A8": {
+   "Description": "Runtime ID for agent: agentcore_runtime",
+   "Value": {
+    "Fn::GetAtt": [
+     "ApplicationAgentAgentcoreRuntimeA1A4FE7E",
+     "AgentRuntimeId"
+    ]
+   },
+   "Export": {
+    "Name": "AgentCore-udacity-default-agentcore-runtime-RuntimeId"
+   }
+  },
+  "ApplicationAgentAgentcoreRuntimeRuntimeArnOutput82AE9F7C": {
+   "Description": "Runtime ARN for agent: agentcore_runtime",
+   "Value": {
+    "Fn::GetAtt": [
+     "ApplicationAgentAgentcoreRuntimeA1A4FE7E",
+     "AgentRuntimeArn"
+    ]
+   },
+   "Export": {
+    "Name": "AgentCore-udacity-default-agentcore-runtime-RuntimeArn"
+   }
+  },
+  "ApplicationAgentAgentcoreRuntimeRoleArnOutput1A532F46": {
+   "Description": "Execution Role ARN for agent: agentcore_runtime",
+   "Value": "arn:aws:iam::044889796315:role/udacity-agentcore-agentcore-role",
+   "Export": {
+    "Name": "AgentCore-udacity-default-agentcore-runtime-RoleArn"
+   }
+  },
+  "StackNameOutput": {
+   "Description": "Name of the CloudFormation Stack",
+   "Value": "AgentCore-udacity-default"
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

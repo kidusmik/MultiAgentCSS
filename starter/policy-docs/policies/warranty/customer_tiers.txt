@@ -1,0 +1,33 @@
+
+NovaMart Customer Tier Program
+================================
+Last Updated: January 2025
+
+TIER OVERVIEW
+NovaMart offers two customer tiers: Standard and Premium.
+
+STANDARD TIER
+- Default tier for all new customers
+- 30-day return window
+- Standard shipping rates apply
+- 1-year warranty on electronics
+- Standard customer support response time: 24-48 hours
+
+PREMIUM TIER
+Requirements: Spend $500+ in a calendar year OR place 20+ orders in a calendar year.
+Benefits:
+- Extended 60-day return window
+- Free expedited shipping on all orders
+- 3-year warranty on electronics
+- Priority customer support: response within 4 hours
+- Early access to sales and new product launches
+- Dedicated account manager for orders over $500
+
+HOW TO UPGRADE
+Customers are automatically upgraded to Premium when they meet the spending
+or order threshold. An email notification is sent upon upgrade.
+Tier status is evaluated on a rolling 12-month basis.
+
+TIER DOWNGRADE
+If a customer falls below the Premium threshold for 12 consecutive months,
+they will be moved back to Standard tier with 30 days notice.

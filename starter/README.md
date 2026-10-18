@@ -600,3 +600,49 @@ The first deploy bootstraps CDK (`CDKToolkit` stack) - make sure your credential
 ## License
 
 [License](../../LICENSE.md)
+
+## Commands Used
+
+```bash
+aws cloudformation deploy --template-file infrastructure\starter_stack.yaml --stack-name udacity-agentcore --capabilities CAPABILITY_NAMED_IAM --region us-east-1
+```
+
+```bash
+python infrastructure\seed_data.py 
+```
+
+```bash
+python config.py
+```
+
+```bash
+ python tests/test_agent.py task2
+```
+
+```bash
+ npm install -g @aws/agentcore@0.30.0 
+ ```
+
+ ```bash
+ pip install uv
+ ```
+
+ ```bash
+  python tests/test_agent.py task5 
+  ```
+
+```bash
+python src/agent_orchestrator.py deploy
+```
+
+```bash
+python tests/test_agent.py all  
+```
+
+```bash
+ python src/agent_orchestrator.py test                    
+```
+
+```bash
+ python infrastructure/cleanup.py --yes
+```
